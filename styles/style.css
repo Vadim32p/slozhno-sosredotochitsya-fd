@@ -307,7 +307,7 @@
 
 /*Медиа запрос под 768px*/
 
-@media (max-width:768px) {
+@media (width <= 768px) {
   .header__theme-menu {
     display: flex;
     justify-content: flex-end;
@@ -352,7 +352,7 @@
   }
 }
 
-@media (width >= 375px) {
+@media (width <= 375px) {
   .header {
     padding: 10px;
   }
