@@ -11,4 +11,6 @@
   --font-size: 18px;
   --btn-color:#FF0070;
   --backgroung-image: url(../images/cover-image-dark.png);
+  --bg-color:#000028;
+  --rgb-color: rgba(255, 0, 112, 0.40);
 }

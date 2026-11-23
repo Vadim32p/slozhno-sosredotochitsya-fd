@@ -5,6 +5,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-color: var(--bg-color);
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -48,7 +49,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.40);
+  border: 1px solid var(--rgb-color);
   cursor: pointer;
 }
 
@@ -66,6 +67,8 @@
   right: 20px;
   padding-right: 8px;
   gap: 12px;
+  font-size: var(--font-size);
+  font-family: var(--font);
 }
 
 .rec::after {
@@ -167,64 +170,58 @@
   border: 1px solid var(--text-color);
 }
 
-/*Секция 1*/
+/*Общая секция*/
 
-.section__one {
+.section {
   display: grid;
-  grid-template-columns: 34% 66%;
-  padding-top: 60px;
   margin: 0 20px;
 }
 
-.card__one {
+/*Секция 1*/
+
+.section__about {
+  grid-template-columns: 34% 66%;
+  padding-top: 60px;
+}
+
+.article {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.card__one p:first-of-type {
+.article-about p:first-of-type {
   padding-bottom: 10px;
 }
 
 /*Секция 2*/
 
-.section__two {
+.section__pro {
   padding-top: 80px;
   padding-bottom: 50px;
-  margin: 0 20px;
 }
 
-.card__div-two {
+.card__div-pro {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 19px;
   padding-top: 20px;
 }
 
-.heading__section-title-two {
-  max-width: 315px;
-}
-
-.heading__card-title-two {
-  margin-bottom: 10px;
-}
-
 /*Секция 3*/
 
-.section__fhree {
-  display: grid;
+.section__pagination {
   grid-template-columns: 34% 66%;
-  margin: 0 20px;
   padding-top: 30px;
-  padding-bottom: 84px;
+  padding-bottom: 80px;
 }
 
-.card__div-fhree {
+.card__div-pagination {
   display: grid;
-  gap: 19px;
+  gap: 20px;
 }
 
-.heading__section-title-free {
+.heading__section-title-pagination {
   font-weight: 700;
   color: var(--sub-text-color);
   font-size: var(--font-size);
@@ -232,12 +229,13 @@
   line-height: 23.4px;
 }
 
-.heading__section-title-pro {
+.heading__section-title-promt {
   font-weight: 400;
 }
 
-.heading__card-text-free {
-  padding-top: 10px;
+.heading__section-title-about,
+.heading__section-title-pro {
+  max-width: 315px;;
 }
 
 /*Секция с картинками*/
@@ -247,13 +245,12 @@
 }
 
 .heading__section-title-image {
-  margin: 0 20px 20px 20px;
+  margin-bottom:20px;
 }
 
 .card__image {
   display: grid;
   gap: 19px;
-  margin: 0 20px;
 }
 
 .section__image-item {
@@ -305,9 +302,9 @@
   font-weight: 700;
 }
 
-/*Медиа запрос под 768px*/
+/*Медиа запрос под 768px, ставим больше для читаемости*/
 
-@media (width <= 768px) {
+@media (max-width: 1023px) {
   .header__theme-menu {
     display: flex;
     justify-content: flex-end;
@@ -329,42 +326,37 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .section__one {
+  .section__about {
     display: grid;
     grid-template-columns: 35% 65%;
   }
 
-  .heading__section-title-one, 
-  .heading__section-title-two {
-    max-width: 236px;
-  }
-
-  .card__div-two {
+  .card__div-pro {
     display: flex;
     flex-direction: column;
     gap: 19px;
     padding-top: 20px;
   }
 
-  .section__fhree {
+  .section__pagination {
     display: grid;
     grid-template-columns: 35% 65%;
   }
+
+  .heading__section-title-about,
+  .heading__section-title-pro {
+    max-width: 236px;;
+  }
 }
 
-@media (width <= 375px) {
+@media (max-width: 767px) {
   .header {
     padding: 10px;
   }
 
   .header__title {
   margin-left: 0px;
-  padding-bottom: 20px;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-}
-
-  .header__text {
-  margin-bottom: 39px;
 }
 
   .rec {
@@ -376,36 +368,38 @@
   }
 
   .corner::after {
-    margin: 10px -10px;
+    margin: -10px;
   }
 
-  .section__one {
+  .section__about {
     display: flex;
     flex-direction: column;
     margin: 0 10px;
-    padding-top: 20px;
+    padding-top: 40px;
     gap: 20px;
   }
 
-  .heading__section-title-two,
-  .heading__section-title-one {
-    min-width: 355px;
-  }
-
-  .section__two {
+  .section__pro {
     margin: -30px 10px;
   }
 
-  .section__fhree {
+  .section__pagination {
     display: flex;
     flex-direction: column;
     margin: 0 10px;
     gap: 20px;
-    padding-bottom: 54px;
+    padding-bottom: 50px;
+  }
+
+  .heading__section-title-about,
+  .heading__section-title-pro {
+    max-width: 355px;;
+    white-space: normal;
   }
 
   .section__image {
     padding-bottom: 40px;
+    margin: 0;
   }
 
   .card__image {
@@ -421,6 +415,5 @@
 
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    padding-bottom: 15px;
   }
 }
