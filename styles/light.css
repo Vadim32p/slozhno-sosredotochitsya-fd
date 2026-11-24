@@ -16,10 +16,11 @@
   --text-color: #353430;
   --accent-color: #FF8DCB;
   --rgb-color: rgba(50, 49, 45, 0.4);
+  --bg-color: #fff1f7;
 }
 
 .theme-light .rec {
-  opacity: 0;
+  display: none;
 }
 
 
@@ -32,5 +33,10 @@
   --text-color: #353430;
   --accent-color: #FF8DCB;
   --rgb-color: rgba(50, 49, 45, 0.4);
+  --accent-color: #FF8DCB;
+  }
+
+  .rec {
+    display: none;
   }
 }
