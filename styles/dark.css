@@ -30,4 +30,8 @@
   --rgb-color: rgba(255, 0, 112, 0.40);
   --bg-color:#000028;
   }
+
+  .rec {
+    display: flex;
+  }
 }
