@@ -56,7 +56,6 @@
 /* Сделаем элемент REC */
 
 .rec {
-  content: "";
   display: flex;
   align-items: center;
   position: absolute;
