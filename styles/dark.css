@@ -19,6 +19,10 @@
   --bg-color:#000028;
 }
 
+:root.theme-dark .rec {
+  display: flex;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
   --background-image: url(../images/cover-image-dark.png);
